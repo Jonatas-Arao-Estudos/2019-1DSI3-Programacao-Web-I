@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+}
+
+body {
+    background-color: #EEE5BE;
+}
+
+header {
+    background-color: #E2D7D3;
+    width: 80%;
+    height: 300px;
+    margin-left: 10%;
+    margin-top: 5%;
+}
+
+#Ursinho {
+    background-image: url(../img/ursinho.png);
+    background-repeat: no-repeat;
+    width: 209px;
+    height: 201px;
+    position: absolute;
+    margin-top: -4%;
+    margin-left: -4%
+}
+
+#Placa {
+    background-image: url(../img/placa.png);
+    background-repeat: no-repeat;
+    width: 171px;
+    height: 97px;
+    margin-left: 70%;
+}
+
+#Cerca1 {
+    background-image: url(../img/cerca4.png);
+    width: 50%;
+    height: 35px;
+    margin-top: 170px;
+    float: left;
+    z-index: 3;
+}
+
+#Grama {
+    background: url(../img/gramado.png);
+    width: 100%;
+    height: 29px;
+    margin-top: -30px;
+    float: left;
+    z-index: 2;
+}
+
+#Cerca2 {
+    background-image: url(../img/cerca4.png);
+    width: 60%;
+    height: 35px;
+    margin-left: 30%;
+    margin-top: -35px;
+    float: left;
+    z-index: 3;
+}
+
+nav {
+    background-color: #ededed;
+    width: 80%;
+    height: 40px;
+    margin-left: 10%;
+}
+
+nav ul {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    padding-left: 15%;
+    padding-top: 10px;
+}
+
+nav ul li {
+    display: inline;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: center;
+}
+
+nav ul li:hover {
+    background-color: #E2D7D3;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+section {
+    background-color: #FFFFFF;
+    width: 80%;
+    height: 700px;
+    margin-left: 10%;
+}
+
+section img {
+    padding-left:15%;
+    width: 70%;
+        
+}
+
+table {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+section h2 {
+    font-family: 'Audiowide', cursive;
+    padding: 2%;
+    text-align: center;
+}
+
+table tr td {
+    text-align: center;
+}
+
+tr #dias_semana {
+    background-color: #E2D7D3;
+}
+
+#materias {
+    background-color: #EEE5BE;
+}
+
+#hora {
+    background-color: #E2D7D3;
+}
+
+article {
+    font-family: 'Audiowide', cursive;
+    padding-top: 2%;
+    padding-left: 2%;
+    padding-left: 2%;
+    padding-bottom: 1%;
+}
+
+article h2 {
+    font-size: 70px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    text-align: center;
+}
+
+article h3{
+    padding-top: 2%;
+    padding-bottom: 2%;
+    text-align: center;
+}
+
+article img {
+    padding: 0px;
+        padding-top: 2%;
+    padding-left: 15%;
+    width: 70%;
+    float: left;
+}
+
+footer {
+    background-color: #000033;
+    width: 100%;
+    height: 10%;
+    bottom: 0%;
+    position: fixed;
+}
+
+footer h2 {
+    color: #66ffff;
+    text-align: center;
+    font-size: 35px;
+    text-shadow: 1px 1px 1px #FFF;
+    padding-top: 1%;
+}

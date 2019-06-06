@@ -1,0 +1,59 @@
+body {
+    background-color: #042C71;
+    margin:1%;
+}
+header{
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+header h1 a {
+    text-decoration-color: none;
+    color: white;
+}
+
+header h1 a:hover {
+    text-decoration: none;
+    color: #90D5FF;
+}
+
+header,footer{
+    background-color: #0B6AB0;
+    text-align: center;
+}
+nav {
+    background-color: #90D5FF;
+    color: #042C71;
+}
+nav ul {
+    text-align: center;
+}
+
+nav ul li a:hover {
+    color: black;
+    cursor: pointer;
+}
+
+nav ul li{
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+nav a {
+    color: #042C71;
+}
+
+section {
+    padding:1%;
+    background-color: white;
+    float: right;
+}
+
+section img{
+    padding: 1%;
+}
+footer {
+    padding-top: 1%;
+    padding-bottom: 0.1%;
+    color: white;
+}

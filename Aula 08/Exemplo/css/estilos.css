@@ -1,0 +1,13 @@
+table{
+	border: 0%;
+}
+tbody, tr, td{ 
+	background-color: pink;
+}
+td{
+	width: 100px;
+}
+thead tr td{
+	background-color: purple;
+	color: white;
+}

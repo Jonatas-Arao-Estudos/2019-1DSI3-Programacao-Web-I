@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Jogo de Perguntas</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+
+	<header class="container">
+
+		<h1 class="text-center">Jogo de Perguntas</h1>
+
+	</header>
+
+	<section class="container mt-4">
+
+		<div class="row">
+			<div class="col-6">
+				<form>
+					<div class="form-group form-row">
+						<div class="col-2">
+							<label>Nº</label>
+						</div>
+						<div class="col-10">
+							<input type="number" class="form-control"></input>
+						</div>
+					</div>
+
+					<div class="form-group form-row">
+						<div class="col-2">
+							<label>Respostas</label>
+						</div>
+						<div class="col-10">
+							<input type="text" class="form-control">
+						</div>
+					</div>
+					<button type="button" class="btn btn-primary btn-lg btn-block mx-auto">Validar</button>
+				</form>
+
+				<div id="resultado">
+					
+				</div>
+
+			</div>
+
+			<div class="col-6">
+
+				<form>
+					<div class="form-group form-row">
+						<div class="col-10">
+							<input type="text" class="form-control" id="nomeJogador">
+						</div>
+						<div class="col-2">
+							<button type="button" class="btn btn-success" id="addJogador">+</button>
+						</div>
+					</div>
+				</form>
+
+				<div>
+					<ul id="listaJogador">
+						
+					</ul>
+				</div>
+
+			</div>
+
+		</div>
+	</section>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+	<script>
+		$(document).on('click','#addJogador',function(){
+			jogador = $('#nomeJogador').val();
+			if(jogador != ""){
+				$('#listaJogador').append('<li class="mb-2" id="jogador">' + jogador + '<button class="ml-2 btn btn-danger" id="byeJogador">-</button></li>');
+			}
+			$('#nomeJogador').val("");
+		});
+
+		$(document).on('click','#byeJogador',function(){
+			$($(this).parent('#jogador')).remove();
+		})
+	</script>
+</body>
+
+</html>

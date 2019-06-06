@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>SideNav</title>
+         <!-- Bootstrap CSS CDN -->
+        <link rel="stylesheet" href="bootstrap.min.css">
+        <!-- Our Custom CSS -->
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="wrapper">           
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <h3>Menu Lateral</h3>
+                </div>
+
+                <ul class="list-unstyled components">
+                    <p>Personalizando o site de acordo com as escolhas do visitante!</p>
+                    <li class="active">
+                        <a href="#sub1" data-toggle="collapse" aria-expanded="false">Menu do Topo</a>
+                        <ul class="collapse list-unstyled" id="sub1">
+                            <li><a href="#" id="fundo" cor="black">Preto</a></li>
+                            <li><a href="#" id="fundo" cor="orange">Laranja</a></li>
+                            <li><a href="#" id="fundo" cor="white">Branco</a></li>
+                        </ul>
+                    </li>
+                    <li>                        
+                        <a href="#sub2" data-toggle="collapse" aria-expanded="false">Background</a>
+                        <ul class="collapse list-unstyled" id="sub2">
+                            <li><a href="#" id="bg" cor="gray">Cinza</a></li>
+                            <li><a href="#" id="bg" cor="blue">Azul</a></li>
+                            <li><a href="#" id="bg" cor="white">Branco</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" id="hideshow">Mostrar/Esconder</a>
+                    </li>
+                    <li>
+                        <a href="#" id="escrevatextos">Escreva no Site</a>
+                    </li>
+                </ul>
+
+                <ul class="list-unstyled CTAs">
+                    <li><a href="#" id="salvar" class="btn btn-success">Salvar</a></li>
+                    <li><a href="#" id="cancelar" class="btn btn-warning">Cancelar</a></li>
+                </ul>
+            </nav>
+                <div id="content">
+
+                    <nav class="navbar navbar-default" id="menu">
+                        <div class="container-fluid">
+
+                            <div class="navbar-header">
+                                <button type="button" id="btn" class="btn btn-info navbar-btn">
+                                    <i class="glyphicon glyphicon-align-left"></i>
+                                    <span id="botao">Menu</span>
+                                </button>
+                            </div>
+
+                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li><a href="#" id="a1">Pagina 1</a></li>
+                                    <li><a href="#" id="a2">Pagina 2</a></li>
+                                    <li><a href="#">Pagina 3</a></li>
+                                    <li><a href="#">Pagina ..</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+
+                    <h2>Bem vindo</h2>
+                    <p>Atum com batata, é lindo viver...atum com batata, você deve comeeeer!...timão e pumba</p>
+
+                    <div class="line"></div>
+
+                    <h2 id="titulo1">Titulo 1</h2>
+                    <p id="texto1"> asdasd asdasdasdas dasd asd asd asd as asd asdasdasd asd as dasdasdas dasdasdasdas
+                    asdasdasda asdasdasd asd asd asdasd as dasdasd  asdasd asd asdsdas ads sdsdasasdasdasd asd as dasdasdas dasdasdasdas asdasd as dasdasd  asdasd asd asdsdas ads sdsdas</p>
+
+                    <div class="line"></div>
+
+                    <h2 id="titulo2">Titulo 2</h2>
+                    <p id="texto2"> asdasd asdasdasdas dasd asd asd asd as asd asdasdasd asd as dasdasdas dasdasdasdas
+                    asdasdasda asdasdasd asd asd asdasd as dasdasd  asdasd asd asdsdas ads sdsdasasdasdasd asd as dasdasdas dasdasdasdas asdasd as dasdasd  asdasd asd asdsdas ads sdsdas</p>
+
+                    <div class="line"></div>
+
+                    <h2 id="titulo3">Titulo 3</h2>
+                    <p id="texto3"> asdasd asdasdasdas dasd asd asd asd as asd asdasdasd asd as dasdasdas dasdasdasdas
+                    asdasdasda asdasdasd asd asd asdasd as dasdasd  asdasd asd asdsdas ads sdsdasasdasdasd asd as dasdasdas dasdasdasdas asdasd as dasdasd  asdasd asd asdsdas ads sdsdas</p>
+                </div>
+        </div>
+
+
+        <!-- jQuery CDN -->
+         <script src="jquery-1.12.0.min.js"></script>
+         <!-- Bootstrap Js CDN -->
+         <script src="bootstrap.min.js"></script>
+<script>
+        $(document).ready(function(){
+               
+                 $(document).on('click','#fundo',function(){
+                    var cor = $(this).attr('cor');
+                    $('#menu').css('background-color',cor)
+                 });
+
+                 $(document).on('click','#bg',function(){
+                    var cor = $(this).attr('cor');
+                        $('#content').css('background-color',cor);
+                    if(cor=="gray"||cor=="blue"){
+                        $('#content h2').css('color',"white");
+                        $('#content p').css('color',"white");
+                    }
+                    else{
+                        $('#content h2').css('color',"black");
+                        $('#content p').css('color',"black");
+                    }
+                 });
+
+                 $('#a1').click(function(){
+                 	$('#sidebar').hide();
+                 });
+
+                 $('#a2').click(function(){
+                 	$('#sidebar').show();
+                 });
+                 $('#btn').click(function(){
+                 	$('#sidebar').toggleClass('active');
+                 });
+
+                var hideshow = 0;
+                 $(document).on('click','#hideshow',function(){
+                    $('#content').toggleClass('ghost');
+                    // if(hideshow == 0){
+                    //     $('#content').hide();
+                    //     hideshow = 1;
+                    // }
+                    // else{
+                    //     $('#content').show();
+                    //     hideshow = 0;
+                    // }
+                 });
+
+                 $(document).on('click','#escrevatextos',function(){
+                    var escolha = prompt("Qual titulo? 1 , 2 ou 3");
+                    var titulo = prompt("Escreva o título: ");
+                    var texto = prompt("Escreva o texto");
+                    if(escolha == "1"){
+                       $('#titulo1').html(titulo);
+                        $('#texto1').html(texto);
+                    }
+                    if(escolha == "2"){
+                       $('#titulo2').html(titulo);
+                        $('#texto2').html(texto);
+                    }
+                    if(escolha == "3"){
+                       $('#titulo3').html(titulo);
+                        $('#texto3').html(texto);
+                    }
+                 })
+               
+        });
+
+        </script>
+         
+    </body>
+</html>

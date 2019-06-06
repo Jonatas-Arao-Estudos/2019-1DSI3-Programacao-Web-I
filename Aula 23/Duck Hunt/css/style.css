@@ -1,0 +1,46 @@
+*{
+	cursor: url("../img/Cursor.png"), default;
+}
+.center{text-align: center; color: white;}
+.area{
+	height: 72vh;
+}
+.bar{
+	background-color: #ddd;
+	border-radius: 25vh;
+	height: 5vh;	
+}
+.progresso{
+	border-radius: 30vh;
+	background-color: #4CAF50;
+	margin-left:-15px;
+	width: 1%;
+	height: 5vh;
+	position: absolute;
+}
+.ponto{
+	width: 150px;
+	height: 150px;
+	background-image: url("../img/Duck.png");
+	background-size: 100%;
+	/* transition: 1s linear; */
+}
+h1 span{
+	float:right;
+	color:white;
+	font-size: 20px;
+	padding: 8px;
+}
+#pontos{
+	display: none;
+}
+
+body{
+	background-image: url("../img/DuckHunt.jpg");
+	background-size: 100%;
+}
+
+#top{
+	float:right;
+	margin-right: 10px;
+}

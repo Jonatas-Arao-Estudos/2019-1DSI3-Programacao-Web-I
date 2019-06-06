@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>SideNav</title>
+         <!-- Bootstrap CSS CDN -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <!-- Our Custom CSS -->
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="wrapper">           
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <h3>Menu Lateral</h3>
+                </div>
+
+                <ul class="list-unstyled components">
+                    <p>Personalizando o site de acordo com as escolhas do visitante!</p>
+                    <li class="active">
+                        <a href="#sub1" data-toggle="collapse" aria-expanded="false">Menu do Topo</a>
+                        <ul class="collapse list-unstyled" id="sub1">
+                            <li><a href="#">Preto</a></li>
+                            <li><a href="#">Laranja</a></li>
+                            <li><a href="#">Branco</a></li>
+                        </ul>
+                    </li>
+                    <li>                        
+                        <a href="#sub2" data-toggle="collapse" aria-expanded="false">Background</a>
+                        <ul class="collapse list-unstyled" id="sub2">
+                            <li><a href="#">Cinza</a></li>
+                            <li><a href="#">Azul</a></li>
+                            <li><a href="#">Branco</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Sessões em Linha</a>
+                    </li>
+                    <li>
+                        <a href="#">Sem Navbar</a>
+                    </li>
+                </ul>
+
+                <ul class="list-unstyled CTAs">
+                    <li><a href="#" id="salvar" class="btn btn-success">Salvar</a></li>
+                    <li><a href="#" id="cancelar" class="btn btn-warning">Cancelar</a></li>
+                </ul>
+            </nav>
+            <div class="container-fluid">
+                <div id="content">
+
+                    <nav class="navbar navbar-default">
+                        <div class="container-fluid">
+
+                            <div class="navbar-header">
+                                <button type="button" id="btn" class="btn btn-info navbar-btn">
+                                    <i class="glyphicon glyphicon-align-left"></i>
+                                    <span>Menu</span>
+                                </button>
+                            </div>
+
+                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li><a href="#">Pagina 1</a></li>
+                                    <li><a href="#">Pagina 2</a></li>
+                                    <li><a href="#">Pagina 3</a></li>
+                                    <li><a href="#">Pagina ..</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+
+                    <h2>Bem vindo</h2>
+                    <p>Atum com batata, é lindo viver...atum com batata, você deve comeeeer!...timão e pumba</p>
+
+                    <div class="line"></div>
+
+                    <h2>Titulo 2</h2>
+                    <p> asdasd asdasdasdas dasd asd asd asd as asd asdasdasd asd as dasdasdas dasdasdasdas
+                    asdasdasda asdasdasd asd asd asdasd as dasdasd  asdasd asd asdsdas ads sdsdasasdasdasd asd as dasdasdas dasdasdasdas asdasd as dasdasd  asdasd asd asdsdas ads sdsdas</p>
+
+                    <div class="line"></div>
+
+                    <h2>Titulo 2</h2>
+                    <p> asdasd asdasdasdas dasd asd asd asd as asd asdasdasd asd as dasdasdas dasdasdasdas
+                    asdasdasda asdasdasd asd asd asdasd as dasdasd  asdasd asd asdsdas ads sdsdasasdasdasd asd as dasdasdas dasdasdasdas asdasd as dasdasd  asdasd asd asdsdas ads sdsdas</p>
+
+                    <div class="line"></div>
+
+                    <h2>Titulo 3</h2>
+                    <p> asdasd asdasdasdas dasd asd asd asd as asd asdasdasd asd as dasdasdas dasdasdasdas
+                    asdasdasda asdasdasd asd asd asdasd as dasdasd  asdasd asd asdsdas ads sdsdasasdasdasd asd as dasdasdas dasdasdasdas asdasd as dasdasd  asdasd asd asdsdas ads sdsdas</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- jQuery CDN -->
+         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+         <!-- Bootstrap Js CDN -->
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+         <script>
+             $(document).on('click','#btn',function(){
+                 $('#sidebar').toggleClass('active');
+             });
+             $(document).on('click','#sub1 li a',function(){
+                if($(this).html() == "Preto"){
+                    $('.navbar').css("background-color","black");
+                    $('#bs-example-navbar-collapse-1 ul li a').css("color","white");
+                    $('#btn').css("background-color","white");
+                    $('#btn i').css("color","black");
+                    $('#btn span').css("color","black");
+                }
+                if($(this).html() == "Laranja"){
+                    $('.navbar').css("background-color","orange");
+                    $('#bs-example-navbar-collapse-1 ul li a').css("color","darkblue");
+                    $('#btn').css("background-color","darkblue");
+                    $('#btn i').css("color","orange");
+                    $('#btn span').css("color","orange");
+                }
+                if($(this).html() == "Branco"){
+                    $('.navbar').css("background-color","white");
+                    $('#bs-example-navbar-collapse-1 ul li a').css("color","black");
+                    $('#btn').css("background-color","black");
+                    $('#btn i').css("color","white");
+                    $('#btn span').css("color","white");
+                }
+             });
+             $(document).on('click','#sub2 li a',function(){
+                if($(this).html() == "Cinza"){
+                    $('#content').css("background-color","grey");
+                    $('#content h2').css("color","white");
+                    $('#content p').css("color","white");
+                }
+                if($(this).html() == "Azul"){
+                    $('#content').css("background-color","#2544d0");
+                    $('#content h2').css("color","white");
+                    $('#content p').css("color","white");
+                }
+                if($(this).html() == "Branco"){
+                    $('#content').css("background-color","white");
+                    $('#content h2').css("color","black");
+                    $('#content p').css("color","black");
+                }
+             });
+             $(document).on('click','#btn',function(){
+                 $('.line').toggleClass('active');
+             });
+         </script>
+         
+    </body>
+</html>

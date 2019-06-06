@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyGameShow</title>
+</head>
+<body>
+<style>
+#boneco{
+	width: 250px;
+	height: 370px;
+	background-image: url(personagem.png);
+}
+#boneco.frente{
+	background-position: 0px 0px ;
+}
+
+#boneco.direita{
+	background-position: -300px -1260px ;
+}
+#boneco.direita2{
+	background-position: -567px -1279px ;
+}
+
+#boneco.esquerda2{
+	background-position: 287px -877px;
+}
+#boneco.esquerda{
+	background-position: 0px -850px ;
+}
+#boneco.costas{
+	background-position: 0px -450px ;
+}
+#parede{
+	width: 5px;
+	height: 370px;
+	background-color: black;
+	top: 30px;
+	margin-left:50%;
+	left:-2.5px;
+	position: absolute;
+	}s
+</style>
+<div id="boneco" class=""></div>
+<div id="parede"></div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="jquery-3.3.1.slim.min.js"></script>
+<script>
+	var andar = 20;
+	$(document).on('keypress',function(evento){
+		var tecla = evento.keyCode;
+		//alert(tecla); //saber qual foi pressionada
+		if(tecla == 100){
+			limpa();
+			direita();
+		}else if(tecla == 97){
+			limpa();
+			esquerda();
+			
+		}
+	});
+	function bateu(){
+		var boneco_left = parseInt($('#boneco').css('margin-left'));
+		var boneco_top = parseInt($('#boneco').css('margin-top'));
+		var parede_top = parseInt($('#parede').css('margin-top'));
+		var parede_left = parseInt($('#parede').css('margin-left'));
+		
+	}
+	function esquerda(){
+		bateu();
+		var posicao = parseInt($('#boneco').css('margin-left'));
+		$('#boneco').addClass('esquerda');
+		setTimeout(function(){
+			$('#boneco').removeClass('esquerda');
+			$('#boneco').addClass('esquerda2');
+			if(posicao > 0){
+				$('#boneco').css('margin-left',(posicao-andar)+'px');
+			}
+
+		},100);
+		setTimeout(function(){
+			$('#boneco').removeClass('esquerda2');
+			$('#boneco').addClass('esquerda');
+		},200);
+
+	}
+
+
+
+
+	function direita(){
+		bateu();
+		var posicao = parseInt($('#boneco').css('margin-left'));
+		$('#boneco').addClass('direita');
+		setTimeout(function(){
+			$('#boneco').addClass('direita2');	
+			$('#boneco').css('margin-left',(posicao+andar)+'px');	
+		},100);
+
+		setTimeout(function(){			
+			$('#boneco').removeClass('direita2');	
+		},200);			
+	}
+	function limpa(){
+		$('#boneco').removeClass('direita');
+		$('#boneco').removeClass('esquerda');
+		$('#boneco').removeClass('frente');
+		$('#boneco').removeClass('costas');
+	}
+
+</script>
+</body>
+
+</html>

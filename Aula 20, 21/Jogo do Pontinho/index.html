@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Game</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12 center">
+				<h1>Jogo do Pontinho</h1>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-12 area border">
+			</div>
+		</div>
+
+		<div class="row mt-2">
+			<div class="col-12">
+				<button class="btn btn-primary" id="play">Play</button>
+			</div>
+		</div>
+	</div>
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script>
+		var largura = $('.area').width();
+		var altura = $('.area').height();
+		var segundos = 0;
+		var cliques = 0;
+		$(document).on('click', '.ponto', function () {
+
+			//$(this).hide();
+			var randWidth = random = Math.ceil(Math.random() * (largura-30));
+			var randHeight = random = Math.ceil(Math.random() * (altura-30));
+
+			$(this).css('margin-left', randWidth);
+			$(this).css('margin-top', randHeight);
+			
+			cliques++;
+			$('#play').html("pontos: "+cliques)
+
+		});
+
+		$(document).on('click', '#play', function () {
+			var item = '<div class="ponto"></div>';
+			$('.area').html(item);
+		});
+	</script>
+</body>
+
+</html>

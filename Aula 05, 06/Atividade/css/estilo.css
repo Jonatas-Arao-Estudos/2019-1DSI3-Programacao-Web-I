@@ -1,0 +1,153 @@
+body {
+    background-color: #042C71;
+    font-family: 'Lato', sans-serif;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+div.titulo,
+div.rodape {
+    background-color: #0B6AB0;
+    color: white;
+    float: left;
+    text-align: center;
+}
+
+div.menu {
+    background-color: #90D5FF;
+    float: left;
+    color: #042C71;
+}
+
+div.menu ul {
+    padding: 0px;
+    text-align: center
+}
+
+div.menu ul li {
+    list-style-type: none;
+    padding: 3%;
+}
+
+div.menu ul li a:hover {
+    color: black;
+    cursor: pointer;
+}
+
+div.menu a {
+    color: #042C71;
+}
+
+div.conteudo {
+    background-color: white;
+    float: right;
+}
+
+div.texto {
+    padding-left: 1.5%;
+}
+
+div.rodape {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: white
+}
+
+a:hover {
+    color: #90D5FF;
+}
+
+img {}
+@media only screen and (max-width: 599px){
+        div.titulo,
+    div.rodape {
+        width: 100%;
+        
+    }
+
+    div.menu {
+        width: 100%;
+    }
+
+    div.menu ul li {
+        padding: 1%;
+    }
+
+
+    div.conteudo {
+        width: 100%;
+    }
+
+    img {
+        width: 95%;
+        float: none;
+        padding: 3%;
+    }
+
+}
+@media only screen and (min-width: 600px) {
+
+    div.titulo,
+    div.rodape {
+        width: 100%;
+    }
+
+    div.menu {
+        width: 35%;
+    }
+
+    div.menu ul li {
+        padding: 16.5%;
+    }
+
+    div.menu, div.conteudo {
+        height: 1100px;
+    }
+
+    div.conteudo {
+        width: 65%;
+    }
+
+    img {
+        width: 95%;
+        float: none;
+        padding: 3%;
+    }
+
+}
+
+@media only screen and (min-width: 748px) {
+
+    div.titulo,
+    div.rodape {
+        width: 100%;
+    }
+
+    div.menu {
+        width: 20%;
+    }
+
+    div.menu ul li {
+        padding: 3%;
+    }
+
+    div.menu,
+    div.conteudo {
+        height: 600px;
+    }
+
+    div.conteudo {
+        width: 80%;
+    }
+
+    img {
+        width: 350px;
+        float: right;
+        padding: 1%;
+        padding-right: 2%;
+    }
+
+}

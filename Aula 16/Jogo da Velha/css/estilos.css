@@ -1,0 +1,10 @@
+.col-4{
+    border: 1px solid black;
+    height: 33.3vh;
+}
+.off {
+    background-color: yellow;
+}
+.on {
+    background-color: red;
+}

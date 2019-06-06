@@ -1,0 +1,12 @@
+.center{
+    text-align: center;
+}
+.area{
+    height: 80vh;
+}
+.ponto{
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    background-color: red;
+}

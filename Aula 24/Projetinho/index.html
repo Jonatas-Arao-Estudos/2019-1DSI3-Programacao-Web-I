@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Projetinho</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+	<header class="container">
+		<div class="row">
+			<div class="col-12">
+				<h1 class="text-center">Projetinho</h1>
+			</div>
+		</div>	
+	</header>
+
+	<section class="container mt-3">
+		<div class="row">
+			<div class="col-6">
+
+				<form>
+
+					<div class="form-group">
+						<div class="form-row">
+							<div class="col-10">	
+								<input type="text" class="form-control" id="insere-texto">
+							</div>
+							<div class="col-2">
+								<button type="button" class="btn btn-info" id="vai-texto">+</button>
+							</div>
+						</div>
+					</div>
+
+					<div class="border border-dark p-2">
+
+						<div class="form-group">
+							<h2>Cor</h2>
+							<button type="button" class="btn btn-primary btn-lg ml-2" id="cor-azul"></button>
+							<button type="button" class="btn btn-danger btn-lg ml-2" id="cor-vermelho"></button>
+							<button type="button" class="btn btn-success btn-lg ml-2" id="cor-verde"></button>
+						</div>
+
+						<div class="form-group">
+							<h2>Tamanho</h2>
+							<button type="button" class="btn btn-info ml-2" id="tamanho-mais">+</button>
+							<button type="button" class="btn btn-info ml-2" id="tamanho-menos">-</button>
+						</div>
+
+						<div class="form-group">
+							<div class="form-row">
+								<div class="col-6">
+									<button type="button" class="btn btn-secondary btn-block" id="gravar">Gravar</button>
+								</div>
+								<div class="col-6">
+									<button type="button" class="btn btn-secondary btn-block" id="limpar">Limpar</button>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+				</form>
+
+			</div>
+			<div class="col-6">
+				<ul id="lista-texto"></ul>
+			</div>
+		</div>
+	</section>
+
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script>
+		var cor, tamanho,lista;
+
+		$(document).ready(function(){
+			lista = localStorage.Lista;
+			cor = localStorage.Cor;
+			tamanho = parseInt(localStorage.Tamanho);
+			$('#lista-texto').html(lista);
+			$('#lista-texto').css('color',cor);
+			$('#lista-texto').css('font-size',tamanho);
+		});
+
+		$(document).on('click','#vai-texto',function(){
+			var texto = $('#insere-texto').val();
+			$('#lista-texto').append('<li class="mb-2" id="texto">'+texto+'<button class="btn btn-info ml-3" id="sai-texto">-</button></li>');
+			$('#insere-texto').val("");
+		});
+
+		$(document).on('click','#sai-texto',function(){
+			$($(this).parent("#texto")).remove();
+		});
+
+		$(document).on('click','#cor-azul',function(){
+			cor = "blue";
+			$('#lista-texto').css('color',cor);
+		});
+
+		$(document).on('click','#cor-vermelho',function(){
+			cor = "red";
+			$('#lista-texto').css('color',cor);
+		});
+
+		$(document).on('click','#cor-verde',function(){
+			cor = "green"
+			$('#lista-texto').css('color',cor);
+		});
+
+		$(document).on('click','#tamanho-mais',function(){
+			tamanhoantigo = parseInt($('#lista-texto').css('font-size'));
+			tamanho = tamanhoantigo + 5;
+			$('#lista-texto').css('font-size',tamanho);
+		});
+
+		$(document).on('click','#tamanho-menos',function(){
+			tamanhoantigo = parseInt($('#lista-texto').css('font-size'));
+			tamanho = tamanhoantigo - 5;
+			$('#lista-texto').css('font-size',tamanho);
+		});
+
+		$(document).on('click','#gravar',function(){
+			lista = $('#lista-texto').html();
+			localStorage.setItem("Lista",lista);
+			localStorage.setItem("Cor", cor);
+			localStorage.setItem("Tamanho", tamanho);
+		});
+
+		$(document).on('click','#limpar',function(){
+			$('#lista-texto').empty();
+			$('#lista-texto').css('font-size',15);
+			$('#lista-texto').css('color','black');
+			localStorage.removeItem("Lista");
+			localStorage.removeItem("Cor");
+			localStorage.removeItem("Tamanho");
+		});
+
+	</script>
+</body>
+
+</html>
