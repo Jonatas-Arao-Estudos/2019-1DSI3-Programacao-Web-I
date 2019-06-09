@@ -1,0 +1,143 @@
+body{
+    background-image: url(../img/fundo.png);
+}
+
+#sonic {
+    background-image: url(../img/sonic.png);
+}
+
+#sonic.direita,
+#sonic.esquerda {
+    width: 78px;
+    height: 112px;
+}
+
+#sonic.frente {
+    width: 57px;
+    height: 106px;
+}
+
+#sonic.costas {
+    width: 59px;
+    height: 112px;
+}
+
+#sonic.direita.parado {
+    background-position: -15px -9px;
+}
+
+#sonic.esquerda.parado {
+    background-position: -24px -134px;
+}
+
+#sonic.frente.parado {
+    background-position: -238px -266px;
+}
+
+#sonic.costas.parado {
+    background-position: -26px -261px;
+}
+
+#sonic.direita.anda {
+    background-position: -15px -9px;
+    transition: linear 0.5s;
+    animation: andaDireita 0.5s steps(1);
+}
+
+#sonic.esquerda.anda {
+    background-position: -24px -134px;
+    transition: linear 0.5s;
+    animation: andaEsquerda 0.5s steps(1);
+}
+
+#sonic.frente.anda {
+    background-position: -238px -266px;
+    transition: linear 0.5s;
+    animation: andaFrente 0.5s steps(1);
+}
+
+#sonic.costas.anda {
+    background-position: -26px -261px;
+    transition: linear 0.5s;
+    animation: andaCostas 0.5s steps(1);
+}
+
+@keyframes andaDireita {
+    0% {
+        background-position: -15px -9px;
+    }
+
+    20% {
+        background-position: -113px -9px;
+    }
+
+    40% {
+        background-position: -202px -9px;
+    }
+
+    60% {
+        background-position: -113px -9px;
+    }
+
+    80% {
+        background-position: -288px -9px;
+    }
+
+    100% {
+        background-position: -113px -9px;
+    }
+}
+
+@keyframes andaEsquerda {
+    0% {
+        background-position: -24px -134px;
+    }
+
+    20% {
+        background-position: -290px -134px;
+    }
+
+    40% {
+        background-position: -202px -134px;
+    }
+
+    60% {
+        background-position: -290px -134px;
+    }
+
+    80% {
+        background-position: -115px -134px;
+    }
+
+    100% {
+        background-position: -290px -134px;
+    }
+}
+
+@keyframes andaCostas {
+    0% {
+        background-position: -26px -261px;
+    }
+
+    33% {
+        background-position: -91px -261px;
+    }
+
+    66% {
+        background-position: -156px -261px;
+    }
+}
+
+@keyframes andaFrente {
+    0% {
+        background-position: -238px -266px;
+    }
+
+    33% {
+        background-position: -310px -266px;
+    }
+
+    66% {
+        background-position: -372px -266px;
+    }
+}

@@ -1,12 +1,86 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>My GameShow but is Sonic</title>
+    <link rel="stylesheet" href="css/personagem.css">
 </head>
+
 <body>
-    
+
+    <div id="sonic" class=""></div>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        var largura = $(document).width();
+		var altura = $(document).height();
+        var andar = 150
+        $(document).ready(function () {
+            $('#sonic').addClass('direita parado');
+        })
+
+        $(document).on('keypress',function(evento){
+            var tecla = evento.keyCode;
+            if(tecla == 100){
+                limpa();
+                andaDireita();
+            }else if(tecla == 97){
+                limpa();
+                andaEsquerda();
+		    }else if(tecla == 119){
+                limpa();
+                andaCostas();
+		    }else if(tecla == 115){
+                limpa();
+                andaFrente();
+		    }
+        });
+
+        function andaDireita(){
+            var posicao = parseInt($('#sonic').css('margin-left'));
+                $('#sonic').addClass('direita anda');
+                $('#sonic').css('margin-left', (posicao + andar) + 'px');
+        }
+
+        function andaEsquerda(){
+            var posicao = parseInt($('#sonic').css('margin-left'));
+            if(posicao > 0){
+                $('#sonic').addClass('esquerda anda');
+                $('#sonic').css('margin-left', (posicao - andar) + 'px');
+            }
+            else{
+                $('#sonic').addClass('esquerda parado');
+            }
+        }
+
+        function andaCostas(){
+            var posicao = parseInt($('#sonic').css('margin-top'));
+            if(posicao > 0){
+                $('#sonic').addClass('costas anda');
+                $('#sonic').css('margin-top', (posicao - andar) + 'px');
+            }
+            else{
+                $('#sonic').addClass('costas parado');
+            }
+        }
+
+        function andaFrente(){
+            var posicao = parseInt($('#sonic').css('margin-top'));
+                $('#sonic').addClass('frente anda');
+                $('#sonic').css('margin-top', (posicao + andar) + 'px');
+        }
+
+        function limpa(){
+            $('#sonic').removeClass('direita');
+            $('#sonic').removeClass('esquerda');
+            $('#sonic').removeClass('frente');
+            $('#sonic').removeClass('costas');
+            $('#sonic').removeClass('anda');
+        }
+    </script>
 </body>
+
 </html>
