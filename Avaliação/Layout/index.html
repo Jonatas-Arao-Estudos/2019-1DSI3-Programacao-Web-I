@@ -4,45 +4,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Avaliação - PW1</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-    <header class="container-fluid p-5">
-        <img src="img/Ex-Aid.jpg" width="200px" class="rounded-circle float-left">
-        <div class="text-white text-center">
-            <h1>Jonatas Arão de Carvalho Neves</h1>
-            <p>Estudante de Desenvolvimento de Sistemas</p>
+    <header class="container-fluid text-white text-center">
+        <div class="row">
+            <div class="col-md-3 col-sm-12 pt-4">
+                <img src="img/Ex-Aid.jpg" width="200vw" class="rounded-circle">
+            </div>
+            <div class="col-md-9 col-sm-12 pt-5">
+                <h1>Jonatas Arão de Carvalho Neves</h1>
+                <p>Estudante de Desenvolvimento de Sistemas</p>
+            </div>
         </div>
     </header>
 
     <section class="container-fluid">
-        <div class="row p-5">
-            <div class="col-11">
+        <div class="row pt-5">
+            <div class="col-md-9 col-sm-12 ml-auto">
                 <h3>Quem eu sou</h3>
                 <p>Sou Cristão, Estudante, Fã de Tokusatsu e Super Heróis, e agora Programador.</p>
             </div>
-            <div class="col-11 p-3">
+        </div>
+        <div class="row">
+            <div class="col-md-9 col-sm-12 ml-auto p-3">
                 <h3>Onde já estive</h3>
                 <p>Texto</p>
             </div>
-            <div class="col-11 p-3">
+        </div>
+        <div class="row">
+            <div class="col-md-9 col-sm-12 ml-auto p-3">
                 <h3>Meus Hobbies</h3>
                 <p>Texto</p>
             </div>
-            <div class="col-11 p-3">
+        </div>
+        <div class="row">
+            <div class="col-md-9 col-sm-12 ml-auto p-3">
                 <h3>Últimos Trabalhos</h3>
                 <p>Texto</p>
             </div>
+        </div>
         </div>
     </section>
 
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script>
+        var heightHeader, widthWindow, margintopSection;
+
+        $(document).ready(function () {
+            defineDimencoes();
+            mudaSection(widthWindow);
+        });
+
+        $(window).resize(function () {
+            defineDimencoes();
+            mudaSection(widthWindow);
+        });
+
+        function defineDimencoes(){
+            heightHeader = parseInt($('header').height());
+            widthWindow = parseInt($(window).width());
+        }
+
+        function mudaSection(wWindow){
+            if (wWindow > 768) {
+                $('section').css('margin-top', heightHeader * 0.6);
+                $('header').addClass('fixed-top');
+            }
+            else{
+                $('header').removeClass('fixed-top');
+                $('section').css('margin-top', 0);
+            }
+        }
+    </script>
 </body>
 
 </html>

@@ -1,12 +1,21 @@
-header{
-    background-color: #0067B9;
+body {
+    background-color: #B8CCEA;
 }
-header h1{
-    font-size: 40px;
+
+header {
+    background: linear-gradient(#0067B9 60%, #FF000000 20%)
 }
-header p{
+
+header h1 {
+    font-size: 35px;
+}
+
+header p {
     font-size: 20px;
 }
-section{
-    background-color: #B8CCEA;
+
+@media only screen and (max-width: 768px) {
+    header {
+        background: #0067B9;
+    }
 }
