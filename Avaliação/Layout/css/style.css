@@ -13,6 +13,10 @@ header h1 {
 header p {
     font-size: 20px;
 }
+.card{
+    background-color: #B8CCEA;
+    border: #B8CCEA;
+}
 
 @media only screen and (max-width: 767px) {
     header {
