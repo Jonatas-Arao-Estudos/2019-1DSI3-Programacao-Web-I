@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+*{
+    font-family: 'Ubuntu', sans-serif;
+}
+body {
+    background-color: #B8CCEA;
+}
+header.cabecalho{
+    background-color: #0067B9;
+    color: white;
+    display: flex;
+    width: 100vw;
+    height: 20vh;
+    justify-content: space-around;
+    position: fixed;
+}
+.pessoaImagem{
+    margin-top: 5vh;
+}
+.pessoaImagem img{
+    border-radius: 100%;
+}
+div.pessoaNome{
+    text-align: center;
+    align-self: flex-end;
+}
+section.pessoaDescricao{
+    margin-left: 32vw;
+    display: flex;
+    justify-content: left;
+    flex-direction: row-reverse;
+    padding-top: 23vh;
+    flex-direction: column;
+}
+div.ondeEstive, div.meusHobbies{
+    display: flex;
+    text-align: center;
+}
+div.ondeEstiveImg, div.meusHobbiesImg{
+    display: flex;
+    flex-direction: column;
+    padding-right: 0.5vw;
+}
+div.ondeEstiveImg img, div.meusHobbiesImg img{
+    width: 13vw;
+    border-radius: 2%;
+}
+div.ultimosCursos{
+    display: flex;
+    padding-bottom: 2vh;
+    padding-right: 3.5vw;
+}
+div.ultimosCursos img{
+    width: 20vw;
+    border-radius: 2%;
+}
+div.ultimosCursosDescricao{
+    padding-right: 10vw;
+    align-self: center;
+}
+div.DS{
+    padding-right: 5vw;
+}
+div.MT{
+    margin-right: 10vw;
+}
+.descricaobarraSkill{
+    padding-left: 20vw;
+    width: 30vw;
+    height: 5vh;
+    display: flex;
+    justify-content: space-between;
+}
+div.meusSkills{
+    display: flex;
+    flex-direction: column;
+}
+div.skill{
+    display: flex;
+}
+.nomeSkill{
+    width: 20vw;
+    align-self: center;
+}
+div.barraSkill50,div.barraSkill60,div.barraSkill70,div.barraSkill80,div.barraSkill90,div.barraSkill100{
+    align-self: center;
+    width: 30vw;
+    height: 3vh;
+    border-radius: 0.25rem;
+}
+
+div.barraSkill50{
+    background: linear-gradient(to right, #007bff 50%, #e9ecef 50%);
+}
+div.barraSkill60{
+    background: linear-gradient(to right, #007bff 60%, #e9ecef 40%);
+}
+div.barraSkill70{
+    background: linear-gradient(to right, #007bff 70%, #e9ecef 30%);
+}
+div.barraSkill80{
+    background: linear-gradient(to right, #007bff 80%, #e9ecef 20%);
+}
+div.barraSkill90{
+    background: linear-gradient(to right, #007bff 90%, #e9ecef 10%);
+}
+div.barraSkill100{
+    background: #007bff 60%;
+}
+@media only screen and (max-width: 768px) {
+    header.cabecalho{
+        height: 120vw;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+    }
+    .pessoaImagem{
+        margin-top: 0;
+        text-align: center;
+    }
+    div.pessoaNome{
+        align-self: center;
+    }
+    section.pessoaDescricao{
+        margin-left: 0;
+        padding: 2%;
+        justify-content: center;
+        padding-top: 0;
+        flex-direction: column;
+    }
+    div.ondeEstive, div.meusHobbies{
+        flex-direction: column;
+        justify-content: center;
+    }
+    div.ondeEstiveImg img, div.meusHobbiesImg img{
+        width: 80vw;
+        align-self: center;
+    }
+    div.ultimosCursos{
+        flex-direction: column;
+    }
+    div.ultimosCursos img{
+        width: 80vw;
+        align-self: center;
+    }
+    div.ultimosCursosDescricao{
+        align-self: center;
+    }
+    .descricaobarraSkill{
+        display: none;
+    }
+    div.skill{
+        display: flex;
+        flex-direction: column;
+    }
+    div.barraSkill50,div.barraSkill60,div.barraSkill70,div.barraSkill80,div.barraSkill90,div.barraSkill100{
+        width: 80vw;
+    }
+}
